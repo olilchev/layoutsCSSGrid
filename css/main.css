@@ -90,9 +90,9 @@ footer {
 #features {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
    
-    grid-column-gap: 10px 30px;
+    text-align: center;
 }
 
 #features i {
@@ -126,7 +126,7 @@ ul#features li:nth-child(3) {
 }
 ul#features li:nth-child(4) {
     background-color:#E6E6E6;
-    
+}   
 ul#features li:nth-child(5) {
     background-color:#D3D3D3;
 }
