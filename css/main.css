@@ -74,6 +74,7 @@ img {
 .main {
     grid-area: right;
     grid-template-rows: 51px fit-content(30%) 40% auto;
+    /* grid-template-columns: 800px; */
     display: grid;
     grid-template-areas:
         "head"
@@ -89,10 +90,10 @@ footer {
 
 #features {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(5, auto);
-   
+    grid-template-columns: repeat(3, auto);
     text-align: center;
+    justify-items: center;
+    
 }
 
 #features i {
@@ -107,6 +108,7 @@ ul#features {
 ul#features li {
     background-color: lightgray;
     padding: 1em;
+    width: 70%
    
 }
 
@@ -129,4 +131,28 @@ ul#features li:nth-child(4) {
 }   
 ul#features li:nth-child(5) {
     background-color:#D3D3D3;
+}
+
+section#info {
+    background-color: #F2F2F2;
+    padding: 2em;
+    grid-area: invention;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    
+    align-items: space-around;
+}
+
+@media screen and (max-width: 60em) {
+    .sidebar {
+        display: none;
+    }
+    body {
+       
+        grid-template-columns: auto;
+        grid-template-areas:
+            "right"
+            "footer";
+       
+    }
 }
