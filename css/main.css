@@ -74,31 +74,35 @@ img {
 .main {
     grid-area: right;
     grid-template-rows: 51px fit-content(30%) 40% auto;
-    /* grid-template-columns: 800px; */
     display: grid;
     grid-template-areas:
         "head"
         "hero"
         "invention"
         "features"
+        
 }
 
 footer {
+    display: grid;
     grid-area: footer;
     background: lightgray;
+    /* grid-template-columns: (2,auto);
+    grid-template-rows: (2,auto) */
 }  
+
+/* #features {
+    grid-template-columns: repeat(2, auto);
+    
+    
+    
+} */
 
 #features {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    text-align: center;
-    justify-items: center;
-    
-}
-
-#features i {
-    font-size: 2em;
-
+    grid-template-columns: repeat(2, auto);
+    text-align:center;
+    grid-area: features;
 }
 
 ul#features {
@@ -155,4 +159,87 @@ section#info {
             "footer";
        
     }
+    .main {
+        grid-template-areas:
+            "head"
+            "hero"
+            "features"
+            "invention"
+    }
+    #features {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3,auto);
+    }
+}
+
+@media screen and (max-width: 40em) {
+
+    .main {
+        grid-template-rows: auto fit-content(30%) 40% auto;
+    }
+
+    header {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+    }
+
+    #logo {
+        margin-left: 0;
+    } 
+
+    nav ul {
+        float:none;
+        padding:0;margin:0;
+        width:100%;
+    }
+    nav ul li a {
+        width: calc(25% - 35px);
+        display: inline-block;
+        font-size: .9em;
+    }
+
+    section#hero, section#info {
+        grid-template-columns: auto;
+        text-align: center;
+    }
+
+    .main {
+        grid-template-areas:
+            "head"
+            "hero"
+            "invention"
+            "features"
+    }
+
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    #mountain {
+        width: 100px;
+        height: 100px;
+    }
+
+    #content p, #content2 p {
+        font-size:.9em;
+    }
+
+    #features {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto);
+    }
+
+    ul#features li:nth-child(2), ul#features li:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+
+    footer {
+        background-color: #41C7C7;
+    }
+
+    footer p {
+        color: #fff;
+        text-align:center;
+    } 
+
 }
